@@ -11,6 +11,7 @@ import {
   Platform,
   ActivityIndicator,
   Alert,
+  Image,
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
@@ -53,13 +54,15 @@ export default function RegistrationScreen() {
 
   return (
     <ImageBackground
-      source={require('../assets/images/green-bg.jpg')}
+      source={require('../assets/images/green-bg.jpeg')}
       style={styles.bg}
       resizeMode="cover"
     >
       <View style={styles.container}>
-        <Text style={styles.title}>Golf Kart Booking</Text>
-
+        <Image
+          source={require('../assets/images/icons/icon_long.png')}
+          style={styles.logo}
+        />
         <Text style={styles.subtitle}>Create an account</Text>
         <Text style={styles.helperText}>
           Enter your email and phone number to sign up for this app
@@ -140,6 +143,13 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: scale(24),
     paddingTop: scale(60),
+  },
+  logo: {
+    width: '100%',
+    height: scale(100),
+    alignSelf: 'center',
+    marginBottom: scale(20),
+    resizeMode: 'contain',
   },
   title: {
     fontSize: scale(24),
